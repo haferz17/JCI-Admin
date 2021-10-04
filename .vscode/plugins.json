@@ -1,1 +1,1 @@
-{"plugins":["cordova-plugin-whitelist"]}
+{"plugins":["cordova-plugin-whitelist","cordova-plugin-fcm-with-dependecy-updated","cordova-plugin-geolocation","cordova-plugin-camera","cordova-plugin-statusbar","cordova-plugin-androidx-adapter"]}
