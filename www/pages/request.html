@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="../css/tailwind.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <title>Request</title>
+</head>
+
+<body>
+    <div class="bg-white min-h-screen py-3 text-black relative overflow-y-auto scrollbar-hidden">
+        <div id="alert" />
+        <div class="px-5">
+            <p class="text-3xl my-5">My Activity</p>
+            <div class="flex items-center">
+                <a href="request.html" class="w-1/2 flex items-center justify-center h-full bg-yellow-50 py-3">
+                    <p class="text-xl">Request</p>
+                </a>
+                <a href="activities.html" class="w-1/2 flex justify-center h-full">
+                    <p class="text-xl">Activities</p>
+                </a>
+            </div>
+        </div>
+        <div id="list" />
+        <div
+            class="h-14 border bg-white border-gray-200 fixed bottom-3 left-16 right-16 rounded-3xl flex items-center shadow-lg">
+            <a href="home.html" class="w-1/2 flex justify-center h-full">
+                <i id="home" class="bi-house-door text-black self-center text-2xl"></i>
+            </a>
+            <a href="request.html" class="w-1/2 flex justify-center h-full">
+                <i id="home" class="bi-list-task text-black self-center text-2xl"></i>
+            </a>
+            <a href="profile.html" class="w-1/2 flex justify-center h-full">
+                <i id="person" class="bi-person text-black self-center text-2xl"></i>
+            </a>
+        </div>
+    </div>
+    <script src="../cordova.js"></script>
+    <script src="../js/request.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>
