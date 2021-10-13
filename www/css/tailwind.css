@@ -86,8 +86,93 @@ p{
   font-family:Montserrat
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: #333;
+}
+
+::placeholder {
+  font-family:Montserrat;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.semibold {
+  font-family :Montserrat-SemiBold
+}
+
 .bold {
   font-family :Montserrat-Bold
+}
+
+.text-primary {
+  color: #4babfa;
+}
+
+.bg-primary {
+  background-color: #4babfa;
+}
+
+.bg-primary-2 {
+  background-color: #ACF8FF;
+}
+
+.bg-soft {
+  background-color: #F6FCFE;
+}
+
+.bg-soft-2 {
+  background-color: #d5f5f8;
+}
+
+.bg-soft-3 {
+  background-color: #E1DAFF;
+}
+
+.to-soft-3 {
+  --tw-gradient-to: #ccc1ff;
+}
+
+.bg-soft-4 {
+  background-color: #FFCEC5;
+}
+
+.to-soft-4 {
+  --tw-gradient-to: #ffafa1;
+}
+
+.bg-soft-5 {
+  background-color: #F5D2E8;
+}
+
+.to-soft-5 {
+  --tw-gradient-to: #f7b5df;
+}
+
+.bg-violet {
+  background-color: #E9EEFF;
+}
+
+.h-screen-30 {
+  height: 30vh;
+}
+
+.h-screen-56 {
+  height: 56vh;
+}
+
+.line-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .gallery {

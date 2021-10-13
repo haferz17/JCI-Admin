@@ -13,34 +13,37 @@
 
 <body>
     <div class="bg-white min-h-screen py-3 text-black relative overflow-y-auto scrollbar-hidden">
-        <div class="px-5">
-            <p class="text-3xl my-5">My Activity</p>
+        <div class="px-5 mb-3">
+            <p class="text-3xl my-4">My Activity</p>
             <div class="flex items-center">
-                <a href="request.html" class="w-1/2 flex items-center justify-center h-full">
-                    <p class="text-xl">Request</p>
-                </a>
-                <a href="activities.html" class="w-1/2 flex justify-center h-full bg-yellow-50 py-3">
-                    <p class="text-xl">Activities</p>
-                </a>
+                <button onclick="redirect('request.html')" class="flex items-center justify-center px-3 py-2">
+                    <p class="text-sm font-bold text-gray-500">Request</p>
+                </button>
+                <button class="flex justify-center bg-gray-50 px-3 py-2 rounded-3xl ml-2">
+                    <p class="text-sm font-bold text-primary">Activities</p>
+                </button>
             </div>
         </div>
-        <div id="list" />
-        <div
-            class="h-14 border bg-white border-gray-200 fixed bottom-3 left-16 right-16 rounded-3xl flex items-center shadow-lg">
-            <a href="home.html" class="w-1/2 flex justify-center h-full">
-                <i id="home" class="bi-house-door text-black self-center text-2xl"></i>
-            </a>
-            <a href="activities.html" class="w-1/2 flex justify-center h-full">
-                <i id="home" class="bi-list-task text-black self-center text-2xl"></i>
-            </a>
-            <a href="profile.html" class="w-1/2 flex justify-center h-full">
-                <i id="person" class="bi-person text-black self-center text-2xl"></i>
-            </a>
+        <div id="list" class="px-5" />
+        <div class="left-0 w-full h-14 border-t bg-white fixed bottom-0 rounded-3xl flex items-center z-10">
+            <button onclick="redirect('home.html')" class="w-1/2 flex justify-center h-full">
+                <i id="home" class="bi-house-door self-center text-2xl"></i>
+            </button>
+            <button onclick="redirect('request.html')" class="w-1/2 flex justify-center h-full">
+                <i id="home" class="bi-basket text-primary self-center text-2xl"></i>
+            </button>
+            <button onclick="redirect('profile.html')" class="w-1/2 flex justify-center h-full">
+                <i id="person" class="bi-person self-center text-2xl"></i>
+            </button>
         </div>
     </div>
     <script src="../cordova.js"></script>
     <script src="../js/activities.js"></script>
     <script src="../js/api.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 

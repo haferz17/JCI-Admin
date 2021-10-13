@@ -13,43 +13,68 @@
 
 <body>
     <div class="bg-white h-screen text-black relative">
-        <div class="h-2/3 w-full relative flex items-center">
-            <img id="avatar" src="" class="h-full bg-cover w-full" />
-            <div class="absolute bottom-5 right-0 flex flex-col pr-5 pb-5">
-                <button id="buttonCamera" class="shadow-md rounded-full px-4 py-3" style="background-color: #FFF2D0;"><i
-                        class="bi-camera text-2xl"></i></button>
+        <div class="bg-primary-2 flex justify-center">
+            <img src="../img/profile.png" class="w-full -mb-1 mt-16" />
+        </div>
+        <div class="w-full relative bg-white">
+            <div class="flex flex-col w-full items-center bg-white">
+                <img id="avatar" src="https://www.chocolatebayou.org/wp-content/uploads/No-Image-Person-1536x1536.jpeg"
+                    class="w-36 h-36 rounded-full -mt-24 border" />
+                <p id="name" class="text-xl font-bold mt-1.5"></p>
+                <div class="flex items-center -mt-1 mb-2">
+                    <p id="role" class=""></p>
+                    <i class="bi-check-circle-fill text-primary self-center ml-1"></i>
+                </div>
+            </div>
+            <div class="bg-white mt-2">
+                <a href="editProfile.html" class="flex items-center border-b border-t justify-between w-full px-5 py-2">
+                    <div class="flex items-center">
+                        <i class="bi-person self-center text-lg"></i>
+                        <p class="text-sm ml-3">Personal Data</p>
+                    </div>
+                    <i class="bi-chevron-right self-center ml-2"></i>
+                </a>
+                <button class="flex items-center border-b justify-between w-full px-5 py-2">
+                    <div class="flex items-center">
+                        <i class="bi-gear self-center text-lg"></i>
+                        <p class="text-sm ml-3">Setting</p>
+                    </div>
+                    <i class="bi-chevron-right self-center ml-2"></i>
+                </button>
+                <button class="flex items-center border-b justify-between w-full px-5 py-2">
+                    <div class="flex items-center">
+                        <i class="bi-star self-center text-lg"></i>
+                        <p class="text-sm ml-3">Rate</p>
+                    </div>
+                    <i class="bi-chevron-right self-center ml-2"></i>
+                </button>
+                <div class="flex justify-center">
+                    <button onclick="logout()"
+                        class="flex items-center justify-between py-2 mt-10 rounded-2xl px-10 bg-primary text-white">
+                        <div class="flex items-center">
+                            <i class="bi-box-arrow-right self-center text-lg"></i>
+                            <p class="text-sm ml-3">Logout</p>
+                        </div>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="bg-green-100 h-1/3" style="background-color: #FFF2D0;">
-            <div class="py-5 px-5 h-1/3 rounded-tl-3xl rounded-tr-3xl absolute bottom-0 mb-5 right-0 left-0 shadow-3xl"
-                style="background-color: #FFF2D0;">
-                <p id="name" class="text-2xl w-3/5 bold"></p>
-                <div class="flex items-center">
-                    <p id="role" class="text-md capitalize"></p>
-                    <i class="bi-check-circle-fill text-blue-400 self-center text-xl ml-2"></i>
-                </div>
-                <div class="flex items-center mb-0.5">
-                    <p class="text-md">Jakarta, Indonesia</p>
-                    <i class="bi-geo-alt-fill text-red-400 self-center text-xl ml-2"></i>
-                </div>
-                <p id="email" class="text-md">james@email.com</p>
-            </div>
-        </div>
-        <div
-            class="h-14 border bg-white border-gray-200 fixed bottom-3 left-16 right-16 rounded-3xl flex items-center shadow-lg">
-            <a href="home.html" class="w-1/2 flex justify-center h-full">
-                <i id="home" class="bi-house-door text-black self-center text-2xl"></i>
-            </a>
-            <a href="request.html" class="w-1/2 flex justify-center h-full">
-                <i id="home" class="bi-list-task text-black self-center text-2xl"></i>
-            </a>
-            <a href="profile.html" class="w-1/2 flex justify-center h-full">
-                <i id="person" class="bi-person text-black self-center text-2xl"></i>
-            </a>
+        <div class="left-0 w-full h-14 border-t bg-white fixed bottom-0 rounded-3xl flex items-center z-10">
+            <button onclick="redirect('home.html')" class="w-1/2 flex justify-center h-full">
+                <i id="home" class="bi-house-door self-center text-2xl"></i>
+            </button>
+            <button onclick="redirect('request.html')" class="w-1/2 flex justify-center h-full">
+                <i id="home" class="bi-basket self-center text-2xl"></i>
+            </button>
+            <button onclick="redirect('profile.html')" class="w-1/2 flex justify-center h-full">
+                <i id="person" class="bi-person text-primary self-center text-2xl"></i>
+            </button>
         </div>
     </div>
     <script src="../cordova.js"></script>
     <script src="../js/profile.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/utils.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 

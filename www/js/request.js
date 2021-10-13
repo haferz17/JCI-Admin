@@ -20,17 +20,25 @@ function fetchData(reload) {
 
 function renderList(data) {
     let html = ''
-    data.map(item => {
+    data.map((item, index) => {
         html = html + `
-            <a class="cursor-pointer w-full bg-blue-50 py-2 px-2 flex items-center justify-between border-b-2 border-white">
-                <div>
-                    <p>Laundry #${item.id}</p>
-                    <p>by ${item.user?.name}</p>
+        <div class="relative">
+            <a href="detail.html?${item.id}" class="bg-white py-2.5 px-1 border rounded-md flex items-center mt-${index == 0 || index == 1 ? '2' : '0'} mb-${index == data.length - 1 ? '14' : '2'}">
+                <img src="${getStatus(item.status).icon}" class="w-16 mx-2" />
+                <div class="px-1.5 w-full flex justify-between">
+                    <div>
+                        <p class="text-sm font-bold ${item.status == 'unconfirmed' ? '-mt-6' : ''}">Laundry #${item.id}</p>
+                        <p class="text-xs text-gray-500 my-0.5">${getStatus(item.status).text}</p>
+                    </div>
+                    <div class="text-right ${item.status == 'unconfirmed' ? '-mt-5' : ''}">
+                        <p class="text-xs text-gray-500 mt-0.5">${moment(item.created_at).format('MMM DD')}</p>
+                    </div>
                 </div>
-                <button onClick="javascript:confirm(${item.id})" class="bg-red-100 py-1 px-2 rounded-md">
-                    <p>Confirm</p>
-                </button>
             </a>
+            ${item.status == 'unconfirmed' ? `<button onClick="confirm('${item.id}')" class="absolute bottom-2.5 left-16 ml-7 bg-soft-2 py-0.5 px-2 rounded-md mr-2 text-sm">
+                <p class="capitalize">Confirm</p>
+            </button>` : ''}
+        </div>
         `
     })
     html = $.parseHTML(html)

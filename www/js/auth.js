@@ -31,10 +31,9 @@ function register() {
         type: 'POST',
         data: { name, email, password, role: 'admin' },
         success: res => {
-            console.log("res", res)
             if (res.status) {
                 alert('Register Successfully')
-                window.location.href = 'login.html'
+                redirect('login.html')
             }
         }
     })
