@@ -12,6 +12,10 @@ function fetchData(reload) {
         success: res => {
             if (res.status) {
                 renderDetail(res.data[0])
+                localStorage.setItem('loc', JSON.stringify({
+                    lat: res.data[0].user?.latitude,
+                    long: res.data[0].user?.longitude,
+                }))
                 reload && window.location.reload()
             }
         }
@@ -86,6 +90,7 @@ function renderDetail(data) {
             <div class="bg-white border shadow rounded-md px-3 py-2 mb-3 mt-0.5">
                 <p class="text-sm">${data.user.name} | ${data.user.phone}</p>
                 <p class="text-sm">${data.user.address}</p>
+                <a href="maps.html" class="text-primary">View Maps</a>
             </div>
             ${data.note || data.image ? `<div class="flex items-center">
                 <i class="bi-bookmark-plus text-lg text-green-500"></i>
