@@ -1,5 +1,5 @@
 {
-  "name": "io.cordova.hellocordova",
+  "name": "id.sch.smkn1boyolangu.pkk2021.jcibackoffice.aftar",
   "displayName": "HelloCordova",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
@@ -20,7 +20,8 @@
     "cordova-plugin-fcm-with-dependecy-updated": "^7.8.0",
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-statusbar": "^2.4.3",
-    "cordova-plugin-whitelist": "^1.3.4"
+    "cordova-plugin-whitelist": "^1.3.4",
+    "cordova-plugin-x-toast": "^2.7.2"
   },
   "cordova": {
     "plugins": {
@@ -46,11 +47,12 @@
       "cordova-plugin-androidx-adapter": {
         "GPS_REQUIRED": "true",
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      },
+      "cordova-plugin-x-toast": {}
     },
     "platforms": [
-      "android",
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }

@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    <div class="bg-white min-h-screen py-3 text-black relative">
-        <div class="w-full flex justify-center mt-5">
+    <div class="bg-white min-h-screen py-3 text-black relative flex flex-col justify-center">
+        <div class="w-full flex justify-center mt-5" style="margin-bottom: 5%; margin-top: -5%;">
             <img src="../img/login.png" class="w-11/12 object-contain" />
         </div>
         <div class="px-8 flex flex-col">
@@ -22,10 +22,10 @@
                 <form action="javascript:login()" method="POST" class="flex flex-col">
                     <p class="text-sm mb-0.5">Email</p>
                     <input class="bg-white border-b outline-none pb-1 pt-0.5" name="email" id="email"
-                        placeholder="Your email" />
+                        placeholder="Your email" required />
                     <p class="text-sm mb-0.5 mt-3">Password</p>
                     <input class="bg-white border-b outline-none pb-1 pt-0.5" name="password" id="password"
-                        placeholder="Your password" type="password" />
+                        placeholder="Your password" type="password" required />
                     <p class="text-sm mb-1 mt-3 text-right text-gray-500">Forgot password?</p>
                     <button class="bg-primary text-white py-1.5 rounded-2xl mt-4 font-bold">Login</button>
                 </form>

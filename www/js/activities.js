@@ -60,7 +60,7 @@ function updateStatus(idLaundry, status) {
             success: res => {
                 if (res.status) {
                     fetchData('reload')
-                    alert('Succesfully update status')
+                    toast('Succesfully update status')
                 }
             }
         })

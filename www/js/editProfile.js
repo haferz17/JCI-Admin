@@ -7,6 +7,7 @@ function onDeviceReady() {
     $('#email').attr('value', user.email)
     $('#phone').attr('value', user.phone)
     $('#address').attr('value', user.address)
+    localStorage.setItem('imgProfile', '')
     showMaps()
 }
 
@@ -15,7 +16,7 @@ function showMaps() {
         const { latitude, longitude } = position.coords
         localStorage.setItem('lat', latitude.toString())
         localStorage.setItem('long', longitude.toString())
-        map.setView([Latitude, Longitude], 15)
+        map.setView([latitude, longitude], 15)
     }, error => {
         console.log('code: ', error)
     }, {
@@ -31,6 +32,9 @@ function showMaps() {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+    marker = L.marker([user.latitude, user.longitude]).addTo(map)
+        .bindPopup(user.latitude + ", " + user.longitude)
+        .openPopup()
 
     map.on('click', function (e) {
         localStorage.setItem('setLat', e.latlng.lat.toString())
@@ -42,14 +46,29 @@ function showMaps() {
     })
 }
 
+function openCamera() {
+    navigator.camera.getPicture((res) => {
+        $('#avatar').attr('src', 'data:image/png;base64, ' + res)
+        localStorage.setItem('imgProfile', `data:image/png;base64, ${res}`)
+        $('#placeholder').html(``)
+    }, (e) => {
+    }, {
+        quality: 10,
+        cameraDirection: 1,
+        destinationType: 0,
+        correctOrientation: true
+    })
+}
+
 function update() {
     const name = $("input#name").val()
     const email = $("input#email").val()
     const phone = $("input#phone").val()
     const address = $("input#address").val()
-    const latitude = parseFloat(localStorage.getItem('setLat'))
-    const longitude = parseFloat(localStorage.getItem('setLong'))
-    const avatar = 'https://www.chocolatebayou.org/wp-content/uploads/No-Image-Person-1536x1536.jpeg'
+    const latitude = parseFloat(localStorage.getItem('setLat')) || user.latitude
+    const longitude = parseFloat(localStorage.getItem('setLong')) || user.longitude
+    const temp = localStorage.getItem('imgProfile') || ''
+    const avatar = temp || user.avatar || 'https://www.chocolatebayou.org/wp-content/uploads/No-Image-Person-1536x1536.jpeg'
 
     $.ajax({
         url: `${userApi}/${user.id}`,
@@ -57,7 +76,7 @@ function update() {
         data: { name, email, phone, address, avatar, latitude, longitude },
         success: res => {
             if (res.status) {
-                alert('Update Successfully')
+                toast('Update Successfully')
                 localStorage.setItem('lat', '')
                 localStorage.setItem('long', '')
                 localStorage.setItem('setLat', '')

@@ -4,6 +4,10 @@ const redirect = (path) => {
         window.location.replace(path)
 }
 
+function toast(text) {
+    window.plugins.toast.showShortBottom(text)
+}
+
 function getStatus(status) {
     let data = {}
     switch (status) {

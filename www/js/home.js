@@ -86,7 +86,7 @@ function cancel(idLaundry) {
         success: res => {
             if (res.status) {
                 fetchData('reload')
-                alert('Succesfully cancel laundry')
+                toast('Succesfully cancel laundry')
             }
         }
     })
@@ -102,7 +102,7 @@ function updateStatus(idLaundry, status) {
             success: res => {
                 if (res.status) {
                     fetchData('reload')
-                    alert('Succesfully update status')
+                    toast('Succesfully update status')
                 }
             }
         })

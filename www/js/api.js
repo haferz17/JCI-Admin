@@ -1,4 +1,4 @@
-const baseUrl = 'http://192.168.0.170/api'
+const baseUrl = 'https://jci-app-api.herokuapp.com'
 const doLoginApi = `${baseUrl}/auth/login`
 const doRegisterApi = `${baseUrl}/auth/register`
 const getLaundryApi = `${baseUrl}/laundry`

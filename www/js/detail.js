@@ -65,7 +65,7 @@ function renderDetail(data) {
             ${data.user?.name ? `<div class="bg-white border shadow rounded-md mb-3 px-3 py-2">
                 <div class="flex items-center">
                     <div class="w-12 h-12 rounded-full border mr-2">
-                        <img src="${data.user.avatar}" class="w-12 h-12 rounded-full" />
+                        <img src="${data.avatar_user}" class="w-12 h-12 rounded-full" />
                     </div>
                     <div>
                         <div class="flex items-center">
@@ -125,7 +125,7 @@ function updateStatus(idLaundry, status) {
             success: res => {
                 if (res.status) {
                     fetchData('reload')
-                    alert('Succesfully update status')
+                    toast('Succesfully update status')
                 }
             }
         })

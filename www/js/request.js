@@ -54,7 +54,7 @@ function confirm(idLaundry) {
         success: res => {
             if (res.status) {
                 fetchData('reload')
-                alert('Succesfully confirmed')
+                toast('Succesfully confirmed')
             }
         }
     })
